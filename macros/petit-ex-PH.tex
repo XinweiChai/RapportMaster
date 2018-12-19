@@ -1,0 +1,33 @@
+\begin{figure}[ht]
+\centering
+\begin{tikzpicture}%[font=\scriptsize]
+%\path[use as bounding box] (0,-1) rectangle (4,4);
+
+\TSort{(0,0)}{z}{3}{l}
+\TSort{(2,4)}{b}{2}{t}
+\TSort{(4,1)}{a}{2}{r}
+\THit{b_0}{}{z_1}{.east}{z_2}
+\THit{b_1}{}{z_0}{.north east}{z_2}
+\THit{a_0}{}{b_1}{.south}{b_0}
+\THit{a_1}{out=60,in=0,selfhit}{a_1}{.east}{a_0}
+
+\path[bounce,bend right]
+\TBounce{z_1}{}{z_2}{.south}
+\TBounce{z_0}{bend right=50}{z_2}{.south east}
+;
+\path[bounce,bend left]
+\TBounce{a_1}{}{a_0}{.north}
+\TBounce{b_1}{}{b_0}{.south}
+;
+
+ \THit{z_0}{}{a_0}{.west}{a_1} 
+
+\path[bounce,bend left]
+\TBounce{a_0}{}{a_1}{.south}
+;
+\TState{a_0,b_0,z_1}
+\end{tikzpicture}
+\caption{\label{fig:ph} 
+A PH model example with three sorts: $a$, $b$ and $z$ ($a$ is either at level 0 or 1, $b$ at either level 0 or 1 and $z$ at either level 0, 1 or 2). Boxes represent the sorts (network components), circles represent the processes (component levels), and the 5 actions that model the dynamic behavior are depicted by pairs of arrows in solid and dotted lines. The grayed processes stand for the possible initial state $\PHstate{a_1, b_0, z_1}$.
+}
+\end{figure}

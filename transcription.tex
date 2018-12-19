@@ -1,0 +1,55 @@
+\documentclass[french,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath, amssymb,amsfonts}
+\usepackage{mathrsfs}
+\usepackage{graphicx}
+\usepackage{babel}
+\usepackage{caption}
+\usepackage{geometry}
+\geometry{left=2cm,right=2cm,top=2cm,bottom=2cm}
+\begin{document}
+\section{Titre}
+Bonjour mesdames et messieurs, je suis Xinwei CHAI de deuxième année de Master, aujourd'hui je fais un exposé du thème ....
+\section{Sommaire}
+D'abord c'est un exposé sur la bioinformatique : un domaine de recherche utilisant les technologies de l'information dans le but d'étudier les systèmes biologiques. Je vais vous expliquer quelques modèles bioinfo et ensuite la partie 2 c'est le Process Hitting, qui est le contexte de ma recherche, enfin je vous présenterai ce que j'ai fais, les démarches de complétion. 
+\section{le RRB}
+RRB : Réseau de Régulation Biologique, c'est une recherche sur l'interaction entre les éléments, par exemple les ARNs et les protéines. Ensuite je vous explique qu'est-ce que la complétion : d'une part, mon but est de compléter les réseaux incomplets à partir des données d'expérience et les connaissances existantes, d'autre part, c'est un enrichissement des sémantiques de Process Hitting.
+\section{Modèles de RRB}
+Il y aura 3 modèles dans mon exposé, qui sont les réseaux booléens, qui est le modèle le plus simple, et le modèle de Thomas, qui a été inventé longtemps, et le dernier, le Process Hitting, proposé dans les années récentes, par Loïc Paulevé.
+\section{Réseaux booléens}
+je vous explique comment fonctionnent les réseaux booléens par ce petit exemple. ce réseau est constitué de plusieurs nœuds et arcs, dont les nœuds sont les éléments du système, et les arcs représente les fonctions booléennes. Nœuds d'entrée sont les conditions variables, et nœuds de sortie sont les observations. Dans cet exemple, il y a déjà une partie connue, c'est ..., la partie en gris reste à déterminer.
+\section{Avantages et défauts des réseaux booléens}
+ils possèdent que 2 valeurs par sommet, souvent il y a plusieurs seuils quantitatif s pour une variable, mais le plus important, il ne peut pas représenter la dynamique du système, qui est souvent demandée dans la pratique.
+\section{Modèle de Thomas}
+Pour avoir une meilleure performance, on pense que le modèle de Thomas est un bon choix. À partir d'un graphe discret de régulation ... on peut construire un espace d'états pour représenter différents états et les seuils.
+\section{Approche synchrone et asynchrone}
+Avec les attracteurs, on peut prévoir les transitions futures, mais il y a deux approches pour l'appliquer, à gauche, l'approche synchrone, qui prend les attracteurs comme les états futurs, aucune restriction. À droite, l'approche asynchrone, seule une transition d'au plus un niveau peut être tirée pour tous les instants entre guillemets.
+\section{Avantages et défauts}
+Approche synchrone, c'est un approche déterministe, avec un état initial, on aura définitivement le même résultat, mais c'est pas le cas d'un réseau biologique. Plus précisément,... (tourner à dernière page), pour l'approche asynchrone,... qui marche mieux avec les réseaux biologique. mais il y a encore un problème, le nombre total des états sera énorme en cas de grande échelle, le calcul sera intraitable, on l'appelle ....
+\section{Process Hitting}
+Pour résoudre ce problème, on a besoin d'une méthode non-exhaustive, ce qui apporte le Process Hitting et la structure abstraite, on parle d'abord le PH, un PH est constitué de sortes processus, actions, et une action est composée d'un hitter, target, et un bounce, veut dire certain processus peut faire sauter les autres processus à un autre niveau.
+\section{Structure abstraite}
+Après la construction de PH, on concentre sur les structures abstraites, qui donne un calcul non-exhaustif de l'accessibilité de processus. Parmi les structures, la sur-approximation est une condition suffisante de l'accessibilité et la sous-approximation est une condition nécessaire, elles peuvent être appliquées ensemble afin de donner un résultat dans la plupart de cas.EXPLICATION de schéma...à
+\section{Fonction de l'outil de PINT}
+Le logiciel PINT est développé par Loïc Paulevé l'ex-membre de notre équipe, cet outil réalise les deux approximations et en déduire l'accessibilité. Voici la table de vérité. Alors mon but est de rendre ce dernier cas aux deux premiers. À ce stade, on peut rien faire au cas 2 inconclusive. En plus, il n'y a pas la peine de préciser la sous-approximation comme dans ce méthode, la sous-approximation n'a rien à avoir avec l'accessibilité. 
+\section{Approche d'accessibilité \& de complétion}
+Pendant mon projet, j'ai décidé de résoudre le problème de complétion par deux méthode parce que des fois le PINT ne donne pas le résultat définitif. je préciserai plus tard. Ce que l'on peut faire avec PINT est juste rendre le cas inaccessible au cas inconclusif ou accessible.
+\section{CP}
+Pour compléter avec le résultat de PINT, il y a 3 éléments comme l'entrée dans ce problème... et un ensemble de relations de régulation $R$. Qu'est-ce que cet ensemble? C'est un ensemble d'hypothèses à vérifier selon mon analyse. je le détaillerai plus tard.
+\section{Classement des processus inaccessibles}
+Avant d'analyser, il y a encore une petite notion, l'action liée, et je classe les processus comme suit : pendant l'analyse, je traite d'abord le deuxième en complétant les $b_k$ ou $a_j$, s'il n'y a pas de solution, j'enlève cette action, s'il n'y a pas d'autres actions, je classe ce processus dans le premier ensemble.
+\section{Exemple}
+Voici un petit exemple : À gauche c'est le graphe de régulation en hypothèse. a active b, c inhibe a...
+\section{CSS}
+Après avoir expliqué la CP, il est plus facile de comprendre l'idée de CSS. Elle prend un PH, une séquence stricte. Qu'est-ce qu'une séquence stricte? C'est une séquence contenant toutes les informations ordonnées des sortes observable. Comme dans une expérience, il y a des sortes on connais seulement l'état initial, ou bien on connais pas du tout, dans ce cas là on considère ces sortes comme inobservables.
+\section{Exemple}
+Voici un autre exemple, on analyse d'abord la séquence $S_1$, à partir de $a_0,b_0$, $a_1$ est accessible, dans l'état $a_1,b_0$, $b_1$ est accessible, mais $a_0$ n'est pas accessible à partir de cet état, car il n'y a pas telle action. On fait ensuite la complétion, selon $(a,b,+)$, on peut rajouter une action $b_1,a_1,a_0$ pour que $a_0$ soit accessible à partir de cet état, et de façon identique, on rajoute l'action $a_0,b_1,b_0$. Après complétion, la séquence $S_1$ devient réalisable. On considère le cas de $S_2$, si on met la sorte $a$ comme inobservable, alors cette séquence est bien réalisable, comme $S_1$, mais si $a$ est observable, depuis l'état initial, on ne peut accéder que $a_1$ mais $a_1$ n'est pas dans la séquence, c'est impossible pour une séquence stricte. On trouve les actions qui peuvent rendre $b_1$ accessible, mais malheureusement, on ne peut rajouter que $a_0,b_0,b_1$ ou $b_0,b_0,b_1$, mais ces action ne sont pas cohérentes avec mes hypothèses. Donc à ce stade, il n'y a pas de solution de complétion pour $S_2$. 
+\section{Approche d'accessibilité \& de complétion}
+Après mes explications, on peut comparer les deux approches, la première comporte de façon non-définitive et il ne peut pas analyser la réalisabilité d'une séquence, mais son calcul est non-exhaustif. La deuxième a un résultat définitif mais un calcul exhaustif. À mon avis, il y a beaucoup de conditions de sortie dans mon algorithme, alors la complexité moyenne est réduite.  
+\section{Conclusion}
+Pour conclure, j'ai arrivé à trouver ces 2 approches grâce aux nombreux formalismes de PH. Mon travail est aussi une contribution au PH car il existe déjà l'approche qui sert à empêcher l'accessibilité d'un certain processus, le cut set, alors la complétion est l'opération inverse qui sert à garantir l'accessibilité. Cette avantage demande seulement les données ordonnées, par rapport aux données temporisées. Et avec les conditions de sortie, la complexité est réduite.
+Il y a encore pas mal de défauts, il n'est pas facile de construire l'ensemble de relations de régulation, et il est difficile de trouver la fausse hypothèse, on ne peut savoir qu'il y a des erreurs dans le réseau initial ou les hypothèses. En plus, il y a quelques formalismes qui manquent la complétion pour l'instant, comme les multi-actions et l'absorption de stochasticité. C'est aussi mon plan pour la prochain stade. 
+\end{document}
