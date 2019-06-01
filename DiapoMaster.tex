@@ -63,18 +63,20 @@
 \end{frame}
 \begin{frame}{Modèles de RRB}
 	\begin{enumerate}
-	\item Réseaux booléens\cite{Akutsu2009}
-	\item Modèle de Thomas\cite{Thomas1978}
-	\item Process Hitting\cite{Pauleve2014,pauleve2011modelisation,Pauleve2012}
+	\item Réseaux booléens~\cite{Akutsu2009}
+	\item Modèle de Thomas~\cite{Thomas1978}
+	\item Process Hitting~\cite{Pauleve2014,pauleve2011modelisation,Pauleve2012}
 	\end{enumerate}
 \end{frame}
 
 \begin{frame}{Réseaux booléens} 
-\begin{figure}
-\centering
-\includegraphics[width=0.6\textwidth]{Boolean.png}
-\caption{Un réseau booléen partiel, construit à partir d'expériences, plusieurs exemples sont disponibles : $\mathbf{e}^i=\{v_1^i,v_2^i,v_3^i,v_4^i,v_{12}^i\}, i\in[1;n]$ avec $n$ le nombre total d'expériences, les fonctions booléennes de $v_9\sim v_{11}$ sont déjà connues, mais il reste à déterminer celles de $v_5\sim v_8$ pour expliquer les observations de $v_{12}$}
-\end{figure}
+
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{Boolean.png}
+\end{center}
+
+Un réseau booléen partiel, construit à partir d'expériences, plusieurs exemples sont disponibles : $\mathbf{e}^i=\{v_1^i,v_2^i,v_3^i,v_4^i,v_{12}^i\}, i\in[1;n]$ avec $n$ le nombre total d'expériences, les fonctions booléennes de $v_9\sim v_{11}$ sont déjà connues, mais il reste à déterminer celles de $v_5\sim v_8$ pour expliquer les observations de $v_{12}$
+
 \end{frame}
 
 \begin{frame}{Avantages et défauts des réseaux booléens}
@@ -86,7 +88,6 @@ Un formalisme très concis mais limité : \vspace{0.5cm}
 \end{frame}
 
 \begin{frame}{Modèle de Thomas}
-\begin{figure}[ht]
 \begin{minipage}[t]{0.45\linewidth}
 \centering
 \begin{tikzpicture}
@@ -99,6 +100,7 @@ Un formalisme très concis mais limité : \vspace{0.5cm}
 \draw[->] (5pt,5pt) .. controls (0.67,1) and (1.33,1) .. (2,5pt);
 \draw[->] (2,-5pt) .. controls  (1.33,-1)and (0.67,-1) .. (5pt,-5pt);
 \end{tikzpicture}
+Graphe de régulation
 \end{minipage}
 \begin{minipage}[t]{0.45\linewidth}
 \centering
@@ -119,12 +121,11 @@ Un formalisme très concis mais limité : \vspace{0.5cm}
 \node at (2,0)[anchor=north]{$t_{uu}$};
 \node at (0,1)[anchor=east]{$t_{vu}$};
 \end{tikzpicture}
+Espace d'états
 \end{minipage}
-\caption{À gauche : un graphe de régulation ; À droite : l'espace d'états de ce graphe de régulation}\label{figres}
-\end{figure}
+
 \end{frame}
 \begin{frame}{Approche synchrone et asynchrone}
-\begin{figure}[ht]
 \begin{minipage}[ht]{0.45\linewidth}
 \centering
 \begin{tikzpicture}[line width=1pt]
@@ -172,8 +173,8 @@ Un formalisme très concis mais limité : \vspace{0.5cm}
 \draw[->] (2.6,1.4) arc (-90:240:0.25);
 \end{tikzpicture}
 \end{minipage}
-\caption{Les attracteurs $K_{v,\omega_v(q)}$ sont les mêmes mais les chemins peuvent être différents}
-\end{figure}
+
+Les attracteurs $K_{v,\omega_v(q)}$ sont les mêmes mais les chemins peuvent être différents
 \end{frame}
 \begin{frame}{Avantages et défauts}
 Approche synchrone :
@@ -194,7 +195,7 @@ Explosion d'espaces d'états
 \end{frame}
 \section{Process Hitting}
 \begin{frame}{Process Hitting}
-\begin{figure}
+
 \centering
 \tikzscaled[0.8\textwidth]{
 %\path[use as bounding box] (0,-1) rectangle (4,4);
@@ -230,17 +231,19 @@ Explosion d'espaces d'états
 ;
 \TState{a_0,b_1,c_0,d_0}
 }
-\caption{Exemple de Process Hitting, sortes : $a,b,c,d$, processus : $a_0,a_1,b_0\ldots$, actions : \ac{a_0}{c_0}{c_1}, \ac{b_1}{a_0}{a_1}$\ldots$)}\label{phex}
-\end{figure}
+
+Exemple de Process Hitting, sortes : $a,b,c,d$, processus : $a_0,a_1,b_0\ldots$, actions : \ac{a_0}{c_0}{c_1}, \ac{b_1}{a_0}{a_1}$\ldots$)
+
 \end{frame}
 
 
 \begin{frame}{Structure abstraite}
 \centerline{Sur-approximation et sous-approximation}
-\begin{figure}
+
 \includegraphics[width=0.9\linewidth]{overapp.png}
-\caption{La structure abstraite $\mathcal{A}^\omega_\varsigma$ de l'exemple avec l'objectif $d_1\Rsh^*d_2$ et le contexte $\langle a_1,b_0,c_0,d_1\rangle$ , cet objectif n'est pas réalisable.}
-\end{figure}
+
+La structure abstraite $\mathcal{A}^\omega_\varsigma$ de l'exemple avec l'objectif $d_1\Rsh^*d_2$ et le contexte $\langle a_1,b_0,c_0,d_1\rangle$ , cet objectif n'est pas réalisable.
+
 \end{frame}
 
 \section{Complétion}
@@ -302,8 +305,7 @@ $$\{a_i\mid\nexists h=\acm{b_k}{a_j}{a_i}\}$$
 $$\{a_i\mid\exists h=\acm{b_k}{a_j}{a_i}\}$$
 \end{frame}
 \begin{frame}{Exemple}
-$\mathscr{H}=\{\acm{a_1}{b_0}{b_1}\}$, $\varsigma=\{a_0,b_0,c_0\}$, $R=\{(a,b,+),(c,a,-)\}$.\par
-\begin{figure}[ht]
+$\mathscr{H}=\{\acm{a_1}{b_0}{b_1}\}$, $\varsigma=\{a_0,b_0,c_0\}$, $R=\{(a,b,+),(c,a,-)\}$.
 \centering
 \tikzscaled[0.35\textwidth]{
 \coordinate (P1) at (0,0);
@@ -336,14 +338,15 @@ $\mathscr{H}=\{\acm{a_1}{b_0}{b_1}\}$, $\varsigma=\{a_0,b_0,c_0\}$, $R=\{(a,b,+)
 ;
 \TState{a_0,b_0,c_0}
 }
-\caption{
+
 Au début, $b_1$ n'est pas accessible, comme il a une action liée \ac{a_1}{b_0}{b_1}, $b_1$ est classé dans \texttt{unreachableProcess2}. $a_0$ est évidemment inaccessible car $b_0$ est accessible (état initial). Selon $(c,a,-)\in R$, \ac{c_0}{a_0}{a_1} est rajoutée, alors $b_1$ devient accessible.
-}
-\end{figure}
+
+
 \end{frame}
 \subsection{Complétion basée sur la séquence stricte (CSS)}
 \begin{frame}{Complétion basée sur la séquence stricte (CSS)}
-Fonctionnement analogue\par
+Fonctionnement analogue
+
 \vspace{1cm}
 Éléments :
 \begin{itemize}
@@ -356,7 +359,7 @@ Fonctionnement analogue\par
 \begin{frame}{Exemple}
 $\mathscr{H}=\{\acm{b_0}{a_0}{a_1},\acm{a_1}{b_0}{b_1}\}$, le contexte $\varsigma=\{a_0,b_0\}$, ensemble de relations de régulation $R=\{(a,b,+),(b,a,-)\}$. Considérons deux séquences strictes $S_1=a_1::b_1::a_0::b_0$, $S_2=b_1::b_0$
 \vspace{0.5cm}
-\begin{figure}[ht]
+
 \centering
 \begin{tikzpicture}
 \TSort{(0,0)}{a}{2}{l}
@@ -385,7 +388,7 @@ $\mathscr{H}=\{\acm{b_0}{a_0}{a_1},\acm{a_1}{b_0}{b_1}\}$, le contexte $\varsigm
 \draw[->](P3)--(P4);
 \draw[->](1.6,-0.25)--(1.6,-1.25);
 \end{tikzpicture}
-\end{figure}
+
 \end{frame}
 \begin{frame}{Approches de l'accessibilité \& et de la complétion}
 \begin{table}
@@ -430,7 +433,7 @@ Résultat de complétion :
 \begin{frame}[allowframebreaks]{Références}
 %\beamertemplatetextbibitems
 \renewcommand\refname{Références}
-\bibliographystyle{plain}
+\bibliographystyle{alpha}
 \bibliography{MasterBib}
 
 
